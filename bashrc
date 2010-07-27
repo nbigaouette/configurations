@@ -18,7 +18,7 @@ export GNUTERM=wxt
 export BASH_CONFIG_FOLDER="${HOME}/fichiers/scripts/configurations.git"
 
 [[ -f ${BASH_CONFIG_FOLDER}/tmux_launch.sh ]]       && source ${BASH_CONFIG_FOLDER}/tmux_launch.sh
-[[ -f ${BASH_CONFIG_FOLDER}/fancybash ]]            && source ${BASH_CONFIG_FOLDER}/fancybash
+[[ -f ${BASH_CONFIG_FOLDER}/fancybash.sh ]]         && source ${BASH_CONFIG_FOLDER}/fancybash.sh
 [[ -f ${BASH_CONFIG_FOLDER}/up_down_arrows.sh ]]    && source ${BASH_CONFIG_FOLDER}/up_down_arrows.sh
 [[ -f ${BASH_CONFIG_FOLDER}/aliases.sh ]]           && source ${BASH_CONFIG_FOLDER}/aliases.sh
 [[ -f ${BASH_CONFIG_FOLDER}/sudo_autocomplete.sh ]] && source ${BASH_CONFIG_FOLDER}/sudo_autocomplete.sh
