@@ -117,6 +117,7 @@ alias gc='git commit'
 alias gca='git commit -a -m'
 #alias gd='git diff $* | kompare - &'
 alias gd='meld . &'
+alias gg='git gui'
 alias gps='git push --all'
 alias gpl='git pull'
 
