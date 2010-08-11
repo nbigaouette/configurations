@@ -23,6 +23,8 @@ alias ku='kate -u'
 alias kwp='kate -u --start PKGBUILDs PKGBUILD &'
 #alias kwp='kwrite PKGBUILD &'
 alias octave='octave --quiet'
+alias ipython='ipython -pylab'
+alias scpr='rsync --partial --progress'
 
 #alias arch32='dchroot -d bash'
 alias arch32='schroot -p -c Arch32'
@@ -43,6 +45,7 @@ alias la="$lsbase -la"
 
 fichiers=/home/nicolas/fichiers
 doc=$fichiers/documents/universite/doc
+PKGBUILDs=$fichiers/programmes/PKGBUILDs
 alias cdh='cd $fichiers'
 alias cdt='cd $fichiers/downloads'
 alias cdd='cd $doc'
@@ -58,6 +61,7 @@ alias cdpk='cd $PKGBUILDs'
 
 # Sudo's
 # Command line apps
+alias sudo='sudo -E'
 #alias su='sudo -i'
 #alias su='sudo /bin/bash'
 alias su='sudo su -'
