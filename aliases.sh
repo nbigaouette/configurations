@@ -27,6 +27,7 @@ alias ipython='ipython -pylab'
 function pss() {
     ps aux | grep -i "$@" | grep -v grep
 }
+alias scpr='rsync --partial --progress'
 
 #alias arch32='dchroot -d bash'
 alias arch32='schroot -p -c Arch32'
@@ -47,6 +48,7 @@ alias la="$lsbase -la"
 
 fichiers=/home/nicolas/fichiers
 doc=$fichiers/documents/universite/doc
+PKGBUILDs=$fichiers/programmes/PKGBUILDs
 alias cdh='cd $fichiers'
 alias cdt='cd $fichiers/downloads'
 alias cdd='cd $doc'
@@ -62,6 +64,7 @@ alias cdpk='cd $fichiers/programmes/PKGBUILDs'
 
 # Sudo's
 # Command line apps
+alias sudo='sudo -E'
 #alias su='sudo -i'
 #alias su='sudo /bin/bash'
 alias su='sudo su -'
@@ -121,6 +124,7 @@ alias gc='git commit'
 alias gca='git commit -a -m'
 #alias gd='git diff $* | kompare - &'
 alias gd='meld . &'
+alias gg='git gui'
 alias gps='git push --all'
 alias gpl='git pull'
 
