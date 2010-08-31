@@ -57,7 +57,7 @@ alias cdpi='cd $doc/code/projects/ionization.svn'
 alias cdpt='cd $doc/code/projects/treecode.svn'
 alias cdpq='cd $doc/code/projects/quantumfdtd.git'
 alias cdp='cd $doc/code/projects'
-alias cdpk='cd $PKGBUILDs'
+alias cdpk='cd $fichiers/programmes/PKGBUILDs'
 
 
 # Sudo's
