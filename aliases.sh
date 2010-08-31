@@ -21,7 +21,7 @@ alias pingg="ping -c 3 www.google.com"
 alias kw='kwrite'
 #alias ku='kate -u'
 alias ku='/home/nicolas/fichiers/scripts/open_file_in_active_kate_session.sh'
-alias kwp='kate -u --start PKGBUILDs PKGBUILD &'
+alias kwp='kate --start PKGBUILDs --new PKGBUILD &'
 #alias kwp='kwrite PKGBUILD &'
 alias octave='octave --quiet'
 
