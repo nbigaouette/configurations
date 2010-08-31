@@ -23,6 +23,7 @@ alias ku='/home/nicolas/fichiers/scripts/open_file_in_active_kate_session.sh'
 alias kwp='kate --start PKGBUILDs --new PKGBUILD &'
 #alias kwp='kwrite PKGBUILD &'
 alias octave='octave --quiet'
+alias ipython='ipython -pylab'
 function pss() {
     ps aux | grep -i "$@" | grep -v grep
 }
