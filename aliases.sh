@@ -16,7 +16,6 @@ alias untar="tar -xvf"
 #alias untarj="tar -jxvf"
 alias gmplayer="gmplayer -really-quiet"
 alias mp="mousepad"
-alias pss="ps aux | grep -i"
 alias pingg="ping -c 3 www.google.com"
 alias kw='kwrite'
 #alias ku='kate -u'
@@ -24,6 +23,9 @@ alias ku='/home/nicolas/fichiers/scripts/open_file_in_active_kate_session.sh'
 alias kwp='kate --start PKGBUILDs --new PKGBUILD &'
 #alias kwp='kwrite PKGBUILD &'
 alias octave='octave --quiet'
+function pss() {
+    ps aux | grep -i "$@" | grep -v grep
+}
 
 #alias arch32='dchroot -d bash'
 alias arch32='schroot -p -c Arch32'
