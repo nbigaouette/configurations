@@ -36,6 +36,14 @@ alias makepkg32='dchroot -d makepkg'
 alias to64="sed -e \"s/arch=.*/arch=('i686' 'x86_64')/g\" -i PKGBUILD"
 alias c32="schroot -p -c chroot32"
 alias c64="schroot -p -c chroot64"
+function aur() {
+    url=${1}
+    tarball=${url##http*/}
+    wget ${url}
+    untar ${tarball}
+    cd ${tarball/.tar.gz/}
+}
+
 
 alias dc='cd'
 alias sl='ls'
