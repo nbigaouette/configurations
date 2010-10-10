@@ -41,6 +41,7 @@ function aur() {
     tarball=${url##http*/}
     wget ${url}
     untar ${tarball}
+    rm -f ${tarball}
     cd ${tarball/.tar.gz/}
 }
 
