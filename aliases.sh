@@ -43,6 +43,12 @@ function aur() {
     untar ${tarball}
     rm -f ${tarball}
     cd ${tarball/.tar.gz/}
+    echo "--------------------------"
+    echo "Start 'makepkg'? [Y/n]"
+    read -s answer
+    if [[ "$answer" == "" || "$answer" == "Y" || "$answer" == "y" || "$answer" == "yes" || "$answer" == "oui" || "$answer" == "o" ]]; then
+        makepkg
+    fi
 }
 
 
