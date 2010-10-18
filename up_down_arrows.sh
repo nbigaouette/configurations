@@ -20,7 +20,10 @@
 
 # Up and down arrows search history
 # http://www.geocities.com/h2428/petar/bash_hist.htm
-bind '"\e[A"':history-search-backward
-bind '"\e[B"':history-search-forward
-bind '"\M-w"':"\"\C-k\C-ahistory | grep '^ *[0-9]* *\C-e.'\C-m\""
-
+# Don't run if not in interactive shell
+case "$-" in
+*i*)
+    bind '"\e[A"':history-search-backward
+    bind '"\e[B"':history-search-forward
+    bind '"\M-w"':"\"\C-k\C-ahistory | grep '^ *[0-9]* *\C-e.'\C-m\""
+esac
