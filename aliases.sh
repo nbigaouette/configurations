@@ -53,6 +53,7 @@ PKGBUILDs=$fichiers/programmes/PKGBUILDs
 alias cdh='cd $fichiers'
 alias cdt='cd $fichiers/downloads'
 alias cdd='cd $doc'
+alias cdm='cd $doc/our_papers/mapping.git'
 alias cddn='cd $doc/notes'
 alias cdmd='cd $doc/code/projects/md.git'
 alias cdpr='cd $doc/code/projects/PIC3D.svn'
