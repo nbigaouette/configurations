@@ -36,21 +36,6 @@ alias makepkg32='dchroot -d makepkg'
 alias to64="sed -e \"s/arch=.*/arch=('i686' 'x86_64')/g\" -i PKGBUILD"
 alias c32="schroot -p -c chroot32"
 alias c64="schroot -p -c chroot64"
-function aur() {
-    url=${1}
-    tarball=${url##http*/}
-    wget ${url}
-    untar ${tarball}
-    rm -f ${tarball}
-    cd ${tarball/.tar.gz/}
-    echo "--------------------------"
-    echo "Start 'makepkg'? [Y/n]"
-    read -s answer
-    if [[ "$answer" == "" || "$answer" == "Y" || "$answer" == "y" || "$answer" == "yes" || "$answer" == "oui" || "$answer" == "o" ]]; then
-        makepkg
-    fi
-}
-
 
 alias dc='cd'
 alias sl='ls'
@@ -103,6 +88,22 @@ alias yaourt='yaourt --export /home/nicolas/fichiers/programmes/ArchLinux/pkg_ca
 
 ############################
 # Functions
+
+function aur() {
+    cd $fichiers/programmes/PKGBUILDs/aur
+    url=${1}
+    tarball=${url##http*/}
+    wget ${url}
+    untar ${tarball}
+    rm -f ${tarball}
+    cd ${tarball/.tar.gz/}
+    echo "--------------------------"
+    echo "Start 'makepkg'? [Y/n]"
+    read -s answer
+    if [[ "$answer" == "" || "$answer" == "Y" || "$answer" == "y" || "$answer" == "yes" || "$answer" == "oui" || "$answer" == "o" ]]; then
+        makepkg
+    fi
+}
 
 biggest() {
 	if [[ $1 -gt $2 ]]; then
