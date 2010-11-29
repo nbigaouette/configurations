@@ -186,3 +186,5 @@ function check_memory() {
     while [ 1 ]; do pmap -d `pidof $1` | grep writeable | sed "s|K||g" | awk '{print ""$4" KiB    "$4/1024" MiB    "$4/1024/1024" GiB"}' ; sleep 0.1 ;done 2> /dev/null
 }
 alias cm=check_memory
+
+alias ssync='while [ 1 ]; do echo -n "Syncing..." && date && sync && sleep 3; done'
