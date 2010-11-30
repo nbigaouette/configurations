@@ -134,6 +134,9 @@ alias sl='svn log --stop-on-copy'
 function ss() {
     grep -irn "$@" src/*  | grep -v svn | sed "s|\(.*\):\(.*\):\(.*\)|\1 l\2 : \3|g"
 }
+function ssi() {
+    grep -rn "$@" src/*  | grep -v svn | sed "s|\(.*\):\(.*\):\(.*\)|\1 l\2 : \3|g"
+}
 
 alias gt='git status'
 alias gs='git status'
