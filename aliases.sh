@@ -138,6 +138,7 @@ function ssi() {
     grep -rn "$@" src/*  | grep -v svn | sed "s|\(.*\):\(.*\):\(.*\)|\1 l\2 : \3|g"
 }
 
+alias gl='git log --pretty=oneline --graph'
 alias gt='git status'
 alias gs='git status'
 alias gc='git commit'
