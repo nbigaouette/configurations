@@ -37,6 +37,10 @@ alias to64="sed -e \"s/arch=.*/arch=('i686' 'x86_64')/g\" -i PKGBUILD"
 alias c32="schroot -p -c chroot32"
 alias c64="schroot -p -c chroot64"
 
+function extract_initrc() {
+    gunzip < $1 | cpio -i --make-directories
+}
+
 alias dc='cd'
 alias sl='ls'
 alias sls='ls'
