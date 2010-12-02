@@ -148,6 +148,12 @@ alias gd='meld . &'
 alias gg='git gui'
 alias gps='git push --all'
 alias gpl='git pull'
+function gpull() {
+    current_branch=`git symbolic-ref HEAD | sed "s|refs/heads/||g"`
+    remote=${1-origin}
+    git fetch
+    git rebase ${remote}/${current_branch} ${current_branch}
+}
 
 alias git_clone_qf='git clone ssh://op/git/nicolas/quantumfdtd.git $1'
 alias git_clone_md='git clone ssh://op/git/nicolas/md.git $1'
