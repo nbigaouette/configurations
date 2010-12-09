@@ -146,6 +146,7 @@ alias gca='git commit -a -m'
 #alias gd='git diff $* | kompare - &'
 alias gd='meld . &'
 alias gg='git gui'
+alias gk='gitk --all &'
 alias gps='git push --all'
 alias gpl='git pull'
 function gpull() {
