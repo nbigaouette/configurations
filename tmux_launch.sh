@@ -41,7 +41,7 @@ if [[ "${hostname:0:4}" != "node" ]]; then
                 # Create a new session (without attaching it) and link to session id 0 (to share windows)
                 tmux new-session -d -t 0 -s $session_id
                 # Create a new window in that session
-                tmux new-window
+                #tmux new-window
                 # Attach to the new session
                 tmux attach-session -t $session_id
                 # When we detach from it, kill the session
