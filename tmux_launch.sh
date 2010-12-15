@@ -36,7 +36,7 @@ if [[ "${hostname:0:4}" != "node" ]]; then
                 tmux
             else
                 #echo "tmux already started, attaching..."
-                # Session is is date and time to prevent conflict
+                # Session is date and time to prevent conflict
                 session_id=`date +%Y%m%d%H%M%S`
                 # Create a new session (without attaching it) and link to session id 0 (to share windows)
                 tmux new-session -d -t 0 -s $session_id
