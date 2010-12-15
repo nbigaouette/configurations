@@ -87,6 +87,7 @@ alias modprobe='sudo modprobe'
 alias telinit='sudo telinit'
 alias mount='sudo mount'
 alias umount='sudo umount'
+alias powertop='sudo powertop'
 
 alias yaourt='yaourt --export /home/nicolas/fichiers/programmes/ArchLinux/pkg_cache'
 
