@@ -144,14 +144,14 @@ function ssi() {
 }
 
 alias gl='git log --pretty=oneline --graph'
-alias gg='gitg &'
 alias gt='git status'
 alias gs='git status'
 alias gc='git commit'
 alias gca='git commit -a -m'
 #alias gd='git diff $* | kompare - &'
 alias gd='meld . &'
-alias gg='git gui'
+alias gg='gitg &'
+alias gu='git gui'
 alias gk='gitk --all &'
 alias gps='git push --all'
 alias gpl='git pull'
