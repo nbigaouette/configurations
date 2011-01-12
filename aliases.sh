@@ -144,6 +144,7 @@ function ssi() {
 }
 
 alias gl='git log --pretty=oneline --graph'
+alias gg='gitg &'
 alias gt='git status'
 alias gs='git status'
 alias gc='git commit'
