@@ -143,6 +143,9 @@ function ssi() {
     grep -rn "$@" src/*  | grep -v svn | sed "s|\(.*\):\(.*\):\(.*\)|\1 l\2 : \3|g"
 }
 
+alias tosingle='sed -e "s|.*CFLAGS.*+=.*-DFLOATTYPE_SINGLE|CFLAGS          += -DFLOATTYPE_SINGLE|g" -i Makefile'
+alias todouble='sed -e "s|.*CFLAGS.*+=.*-DFLOATTYPE_SINGLE|#CFLAGS          += -DFLOATTYPE_SINGLE|g" -i Makefile'
+
 alias gl='git log --all --pretty=oneline --graph'
 alias gt='git status'
 alias gs='git status'
