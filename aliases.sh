@@ -47,8 +47,7 @@ alias sls='ls'
 alias l='ls'
 alias rm='rm -i'
 lsbase='/bin/ls -h --group-directories-first --color=auto'
-alias ls="$lsbase -gG"
-alias lsg="$lsbase -l"
+alias ls="$lsbase -l"
 alias la="$lsbase -la"
 
 fichiers=/home/nicolas/fichiers
