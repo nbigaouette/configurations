@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Gentoo
+alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse world"
+
 alias locate='locate -i'
 alias aurbuild="sudo env EDITOR=nano aurbuild"
 alias burn_dvd_iso='growisofs -speed=2 -dvd-compat -Z /dev/dvdrw='
