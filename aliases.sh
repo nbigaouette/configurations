@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias now="date +%Y%m%d_%Hh%M"
+
 # Gentoo
 alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse world"
 
