@@ -141,10 +141,10 @@ alias sup='svn update'
 alias sl='svn log --stop-on-copy'
 
 function ss() {
-    grep -irn "$@" src/*  | grep -v svn | sed "s|\(.*\):\(.*\):\(.*\)|\1 l\2 : \3|g"
+    grep -irn "$@" src/*  | sed "s|\(.*\):\([0-9]\+\):\(.*\)|\1  Line \2  \3|g"
 }
 function ssi() {
-    grep -rn "$@" src/*  | grep -v svn | sed "s|\(.*\):\(.*\):\(.*\)|\1 l\2 : \3|g"
+    grep -rn "$@" src/*  | sed "s|\(.*\):\([0-9]\+\):\(.*\)|\1  Line \2  \3|g"
 }
 
 alias tosingle='sed -e "s|.*CFLAGS.*+=.*-DFLOATTYPE_SINGLE|CFLAGS          += -DFLOATTYPE_SINGLE|g" -i Makefile'
