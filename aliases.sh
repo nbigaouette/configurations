@@ -3,7 +3,7 @@
 alias now="date +%Y%m%d_%Hh%M"
 
 # Gentoo
-alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse world"
+alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse --keep-going world"
 
 alias squeue='squeue --format="%.7i %.9P %.130j %.8u %.8T %.10M %.9l %.6D %R"'
 alias locate='locate -i'
