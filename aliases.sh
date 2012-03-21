@@ -5,6 +5,30 @@ alias now="date +%Y%m%d_%Hh%M"
 # Gentoo
 alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse --keep-going world"
 
+# Create folder in /mnt/data/nicolas/md/shockwave/`now`_NAME and link "output" to in
+function lnso() {
+    mnt="/mnt/data/nicolas/md/shockwave"
+    if [[ "${@}" == "" ]]; then
+        echo "Usage: lnso <name>"
+        return
+    fi
+    new_folder="${mnt}/`now`_${@}"
+    cmd="mkdir ${new_folder}"
+    echo ${cmd}
+    ${cmd}
+    if [[ -h "output" ]]; then
+        cmd="rm -f output"
+        echo ${cmd}
+        ${cmd}
+        cmd="ln -s ${new_folder} output"
+        echo ${cmd}
+        ${cmd}
+    else
+        echo "ERROR: 'output' is not a symbolic link. Not deleting."
+        return
+    fi
+}
+
 alias squeue='squeue --format="%.7i %.9P %.130j %.8u %.8T %.10M %.9l %.6D %R"'
 alias locate='locate -i'
 alias aurbuild="sudo env EDITOR=nano aurbuild"
