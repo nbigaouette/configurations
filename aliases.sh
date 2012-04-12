@@ -16,15 +16,16 @@ function lnso() {
     cmd="mkdir -p ${new_folder}"
     echo ${cmd}
     ${cmd}
-    if [[ -e "output" ]]; then
-        if [[ -h "output" ]]; then
-            cmd="rm -f output"
-            echo ${cmd}
-            ${cmd}
-        else
-            echo "ERROR: 'output' is not a symbolic link. Not deleting."
-            return
-        fi
+    if [[ -h "output" ]]; then
+        cmd="rm -f output"
+        echo ${cmd}
+        ${cmd}
+    elif [[ -d "output" ]]; then
+        echo "ERROR: 'output' is a directory. Not deleting."
+        return
+    else
+        echo "ERROR: 'output' is neither a symbolic link or directory. Not deleting."
+        return
     fi
     cmd="ln -s ${new_folder} output"
     echo ${cmd}
