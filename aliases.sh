@@ -57,6 +57,7 @@ alias kwp='kate --start PKGBUILDs --new PKGBUILD &'
 #alias kwp='kwrite PKGBUILD &'
 alias octave='octave --quiet'
 alias ipython='ipython --pylab'
+alias ipython2='ipython2 --pylab'
 function pss() {
     ps aux | grep -i "$@" | grep -v grep
 }
