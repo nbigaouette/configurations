@@ -13,9 +13,7 @@ function lnso() {
         return
     fi
     new_folder="${mnt}/`now`_${@}"
-    cmd="mkdir -p ${new_folder}"
-    echo ${cmd}
-    ${cmd}
+
     if [[ -h "output" ]]; then
         cmd="rm -f output"
         echo ${cmd}
@@ -23,13 +21,19 @@ function lnso() {
     elif [[ -d "output" ]]; then
         echo "ERROR: 'output' is a directory. Not deleting."
         return
-    else
-        echo "ERROR: 'output' is neither a symbolic link or directory. Not deleting."
-        return
     fi
+
+    cmd="mkdir -p ${new_folder}"
+    echo ${cmd}
+    ${cmd}
+
     cmd="ln -s ${new_folder} output"
     echo ${cmd}
     ${cmd}
+
+    # Make sure output contains .gitignore and .kdev_ignore
+    echo "*" > output/.gitignore
+    touch output/.kdev_ignore
 }
 
 alias squeue='squeue --format="%.7i %.9P %.130j %.8u %.8T %.10M %.9l %.6D %R"'
