@@ -13,20 +13,22 @@ function lnso() {
         return
     fi
     new_folder="${mnt}/`now`_${@}"
-    cmd="mkdir ${new_folder}"
+    cmd="mkdir -p ${new_folder}"
     echo ${cmd}
     ${cmd}
-    if [[ -h "output" ]]; then
-        cmd="rm -f output"
-        echo ${cmd}
-        ${cmd}
-        cmd="ln -s ${new_folder} output"
-        echo ${cmd}
-        ${cmd}
-    else
-        echo "ERROR: 'output' is not a symbolic link. Not deleting."
-        return
+    if [[ -e "output" ]]; then
+        if [[ -h "output" ]]; then
+            cmd="rm -f output"
+            echo ${cmd}
+            ${cmd}
+        else
+            echo "ERROR: 'output' is not a symbolic link. Not deleting."
+            return
+        fi
     fi
+    cmd="ln -s ${new_folder} output"
+    echo ${cmd}
+    ${cmd}
 }
 
 alias squeue='squeue --format="%.7i %.9P %.130j %.8u %.8T %.10M %.9l %.6D %R"'
