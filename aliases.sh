@@ -176,7 +176,6 @@ function ssi() {
 alias tosingle='sed -e "s|.*CFLAGS.*+=.*-DFLOATTYPE_SINGLE|CFLAGS          += -DFLOATTYPE_SINGLE|g" -i Makefile'
 alias todouble='sed -e "s|.*CFLAGS.*+=.*-DFLOATTYPE_SINGLE|#CFLAGS          += -DFLOATTYPE_SINGLE|g" -i Makefile'
 
-alias qgit='qgit4 --all &'
 alias gt='git status'
 alias gs='git status'
 alias gc='git commit'
