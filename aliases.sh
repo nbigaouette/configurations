@@ -62,8 +62,8 @@ function pss() {
 }
 alias scpr='rsync --partial --progress'
 
-#alias arch32='dchroot -d bash'
-alias arch32='schroot -p -c Arch32'
+alias arch32='schroot -c Arch32'
+alias arch64='schroot -c Arch64'
 alias makepkg32='dchroot -d makepkg'
 alias to64="sed -e \"s/arch=.*/arch=('i686' 'x86_64')/g\" -i PKGBUILD"
 alias c32="schroot -p -c chroot32"
