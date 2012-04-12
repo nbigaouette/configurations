@@ -31,14 +31,24 @@ else
     C5='[1;34m'
 fi
 
+extra=""
+if [[ -f /Arch32 ]]; then
+    extra=":ARCH32"
+elif [[ -f /Arch64 ]]; then
+    extra=":ARCH64"
+fi
 
 # Add git branch name but skip if on unicron's compute nodes
-hostname=`hostname`
-if [[ "${hostname:0:4}" != "node" ]]; then
-    PS1='\[${C2}\](\[${C1}\]\u\[${C3}\]@\[${C5}\]\h\[${C3}\]:\[${C1}\]\l\[${C2}\])\[${C3}\]-\[${C2}\](\[${C1}\]$(ls -1|wc -l|tr -d "[:blank:]") files\[${C3}\]:\[${C1}\]$(ls -sh|head -n 1|sed "s/.* //")\[${C3}\]@\[${C1}\]\W\[${C2}\])\[${C3}\]-\[${C2}\](\[${C1}\]$(date +%H)\[${C3}\]:\[${C1}\]$(date +%M)\[${C2}\])\n\[${C2}\](\[${C1}\]\w\[${C3}\]$(__git_ps1 " (%s)"):\[${C1}\]\$\[${C2}\])\[${C3}\]\n ->\[${C4}\] '
-else
-    PS1='\[${C2}\](\[${C1}\]\u\[${C3}\]@\[${C5}\]\h\[${C3}\]:\[${C1}\]\l\[${C2}\])\[${C3}\]-\[${C2}\](\[${C1}\]$(ls -1|wc -l|tr -d "[:blank:]") files\[${C3}\]:\[${C1}\]$(ls -sh|head -n 1|sed "s/.* //")\[${C3}\]@\[${C1}\]\W\[${C2}\])\[${C3}\]-\[${C2}\](\[${C1}\]$(date +%H)\[${C3}\]:\[${C1}\]$(date +%M)\[${C2}\])\n\[${C2}\](\[${C1}\]\w\[${C3}\]:\[${C1}\]\$\[${C2}\])\[${C3}\]\n ->\[${C4}\] '
-fi
+function fgit_branch() {
+    hostname=`hostname`
+    git_branch=""
+    if [[ "${hostname:0:4}" != "node" ]]; then
+        git_branch=$(__git_ps1 " (%s)")
+    fi
+    echo "${git_branch}"
+}
+
+PS1='\[${C2}\](\[${C1}\]\u\[${C3}\]@\[${C5}\]\h${extra}\[${C3}\]:\[${C1}\]\l\[${C2}\])\[${C3}\]-\[${C2}\](\[${C1}\]$(ls -1|wc -l|tr -d "[:blank:]") files\[${C3}\]:\[${C1}\]$(ls -sh|head -n 1|sed "s/.*//")\[${C3}\]@\[${C1}\]\W\[${C2}\])\[${C3}\]-\[${C2}\](\[${C1}\]$(date +%H)\[${C3}\]:\[${C1}\]$(date +%M)\[${C2}\])\n\[${C2}\](\[${C1}\]\w\[${C3}\]$(fgit_branch):\[${C1}\]\$\[${C2}\])\[${C3}\]\n ->\[${C4}\] '
 
 export PS1
 
