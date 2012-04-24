@@ -191,7 +191,7 @@ alias gl='git log --pretty=format:"%Cgreen%h %Creset %s %Cblueby %an (%ar) %Cred
 alias gla='git log --all --pretty=format:"%Cgreen%h %Creset %s %Cblueby %an (%ar) %Cred %d" --graph'
 #alias gd='git diff $* | kompare - &'
 alias gd='meld . &'
-alias gg='gitg &'
+alias gg='gitg 2> /dev/null &'
 alias gu='git gui &'
 alias gk='gitk --all &'
 alias gps='git push --all'
