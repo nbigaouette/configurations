@@ -182,15 +182,10 @@ function ssi() {
 alias tosingle='sed -e "s|.*CFLAGS.*+=.*-DFLOATTYPE_SINGLE|CFLAGS          += -DFLOATTYPE_SINGLE|g" -i Makefile'
 alias todouble='sed -e "s|.*CFLAGS.*+=.*-DFLOATTYPE_SINGLE|#CFLAGS          += -DFLOATTYPE_SINGLE|g" -i Makefile'
 
-alias gt='git status'
-alias gs='git status'
-alias gc='git commit'
-alias gca='git commit -a -m'
 #alias gl='git log --all --pretty=oneline --graph'
 alias gl='git log --pretty=format:"%Cgreen%h %Creset %s %Cblueby %an (%ar) %Cred %d" --graph'
 alias gla='git log --all --pretty=format:"%Cgreen%h %Creset %s %Cblueby %an (%ar) %Cred %d" --graph'
 #alias gd='git diff $* | kompare - &'
-alias gd='meld . &'
 alias gg='gitg 2> /dev/null &'
 alias gu='git gui &'
 alias gk='gitk --all &'
@@ -202,6 +197,21 @@ function gpull() {
     git fetch
     git rebase ${remote}/${current_branch} ${current_branch}
 }
+
+# http://www.catonmat.net/blog/git-aliases/
+alias ga='git add'
+alias gp='git push'
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
 
 alias git_clone_qf='git clone ssh://op/git/nicolas/quantumfdtd.git $1'
 alias git_clone_md='git clone ssh://op/git/nicolas/md.git $1'
