@@ -4,6 +4,7 @@ alias now="date +%Y%m%d_%Hh%M"
 
 # Gentoo
 alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse --keep-going world"
+alias resource="source /etc/profile && source ~/.bashrc"
 
 # Create folder in /mnt/data/nicolas/md/shockwave/`now`_NAME and link "output" to in
 function lnso() {
