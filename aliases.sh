@@ -67,6 +67,7 @@ alias ipython2='ipython2 --pylab'
 function pss() {
     ps aux | grep -i "$@" | grep -v grep
 }
+alias pstree="ps axjf | less"
 alias scpr='rsync --partial --progress'
 
 alias arch32='schroot -c Arch32'
