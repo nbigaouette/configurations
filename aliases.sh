@@ -6,6 +6,21 @@ alias now="date +%Y%m%d_%Hh%M"
 alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse --keep-going world"
 alias resource="source /etc/profile && source ~/.bashrc"
 
+function initrd_gunzip()
+{
+    if [[ "${@}" == "" ]]; then
+        echo "Usage: initrd_gunzip <filename>"
+        return
+    fi
+    filename=${1}
+    directory=`basename ${filename}`
+    directory=${directory/.img.gz/}
+    mkdir ${directory}
+    cd ${directory}
+    gzip -cd ../${filename} | cpio -idmv
+    cd ..
+}
+
 # Create folder in /mnt/data/nicolas/md/shockwave/`now`_NAME and link "output" to in
 function lnso() {
     mnt="/mnt/data/nicolas/md/shockwave"
