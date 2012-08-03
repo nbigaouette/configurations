@@ -10,19 +10,18 @@ alias vnc_eee="dbus-launch vncserver -localhost -geometry 1024x600 :1"
 alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse --tree --keep-going world"
 alias resource="source /etc/profile && source ~/.bashrc"
 
-function initrd_gunzip()
+function initrd_extract()
 {
     if [[ "${@}" == "" ]]; then
         echo "Usage: initrd_gunzip <filename>"
         return
     fi
-    filename=${1}
-    directory=`basename ${filename}`
-    directory=${directory/.img.gz/}
-    mkdir ${directory}
-    cd ${directory}
-    gzip -cd ../${filename} | cpio -idmv
-    cd ..
+
+    filename=`basename $1`
+    dirname=${filename/.img.gz/}
+    mkdir -p ${dirname}
+    cd ${dirname}
+    gunzip -cd ../${1} | sudo cpio -i --make-directories --preserve-modification-time --verbose
 }
 
 # Create folder in /mnt/data/nicolas/md/shockwave/`now`_NAME and link "output" to in
@@ -95,10 +94,6 @@ alias makepkg32='dchroot -d makepkg'
 alias to64="sed -e \"s/arch=.*/arch=('i686' 'x86_64')/g\" -i PKGBUILD"
 alias c32="schroot -p -c chroot32"
 alias c64="schroot -p -c chroot64"
-
-function extract_initrc() {
-    gunzip < $1 | cpio -i --make-directories
-}
 
 alias dc='cd'
 alias sl='ls'
