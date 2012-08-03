@@ -3,7 +3,7 @@
 alias now="date +%Y%m%d_%Hh%M"
 
 # Gentoo
-alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse --keep-going world"
+alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse --tree --keep-going world"
 alias resource="source /etc/profile && source ~/.bashrc"
 
 function initrd_gunzip()
