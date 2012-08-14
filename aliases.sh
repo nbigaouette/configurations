@@ -2,6 +2,9 @@
 
 alias now="date +%Y%m%d_%Hh%M"
 
+# Reset slurm nodes to idle
+alias slurm_reset_nodes="sudo scontrol update NodeName=node[2-16] State=idle"
+
 # VNC
 # https://wiki.archlinux.org/index.php/Tightvnc
 alias vnc_eee="dbus-launch vncserver -localhost -geometry 1024x600 :1"
