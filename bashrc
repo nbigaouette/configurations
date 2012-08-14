@@ -26,3 +26,4 @@ export BASH_CONFIG_FOLDER="${HOME}/fichiers/scripts/configurations.git"
 #[[ -f ${BASH_CONFIG_FOLDER}/bash_insensitive.sh ]]  && source ${BASH_CONFIG_FOLDER}/bash_insensitive.sh
 #[[ -f ${BASH_CONFIG_FOLDER}/max_mem.sh ]]           && source ${BASH_CONFIG_FOLDER}/max_mem.sh
 
+[[ -f ${BASH_CONFIG_FOLDER}/generate_ssh_keys.sh ]] && source ${BASH_CONFIG_FOLDER}/generate_ssh_keys.sh
