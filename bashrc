@@ -27,3 +27,4 @@ export BASH_CONFIG_FOLDER="${HOME}/fichiers/scripts/configurations.git"
 #[[ -f ${BASH_CONFIG_FOLDER}/max_mem.sh ]]           && source ${BASH_CONFIG_FOLDER}/max_mem.sh
 
 [[ -f ${BASH_CONFIG_FOLDER}/generate_ssh_keys.sh ]] && source ${BASH_CONFIG_FOLDER}/generate_ssh_keys.sh
+[[ -f ${BASH_CONFIG_FOLDER}/ssh-login.sh ]]         && source ${BASH_CONFIG_FOLDER}/ssh-login.sh
