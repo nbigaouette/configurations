@@ -58,7 +58,7 @@ function lnso() {
     touch output/.kdev_ignore
 }
 
-alias squeue='squeue --format="%.7i %.9P %.130j %.8u %.8T %.10M %.9l %.6D %R"'
+alias squeue='squeue --format="%.7i %.9P %.100j %.8u %.8T %.10M %.9l %.6D %R"'
 alias locate='locate -i'
 alias aurbuild="sudo env EDITOR=nano aurbuild"
 alias burn_dvd_iso='growisofs -speed=2 -dvd-compat -Z /dev/dvdrw='
