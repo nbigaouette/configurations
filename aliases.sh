@@ -24,7 +24,11 @@ function initrd_extract()
     dirname=${filename/.img.gz/}
     mkdir -p ${dirname}
     cd ${dirname}
-    gunzip -cd ../${1} | sudo cpio -i --make-directories --preserve-modification-time --verbose
+    if [[ "${1:0:1}" == "/" ]]; then
+        gunzip -cd    ${1} | sudo cpio -i --make-directories --preserve-modification-time --verbose
+    else
+        gunzip -cd ../${1} | sudo cpio -i --make-directories --preserve-modification-time --verbose
+    fi
 }
 
 # Create folder in /mnt/data/nicolas/md/shockwave/`now`_NAME and link "output" to in
