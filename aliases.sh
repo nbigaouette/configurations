@@ -62,6 +62,11 @@ function lnso() {
     touch output/.kdev_ignore
 }
 
+# Call "tail -f" on a file and put timestamp at the begining of each lines.
+function tailtime() {
+    tail -f ${1} | awk '{now=strftime("%F %T%z\t");sub(/^/, now);print}'
+}
+
 alias squeue='squeue --format="%.7i %.9P %.100j %.8u %.8T %.10M %.9l %.6D %R"'
 alias locate='locate -i'
 alias aurbuild="sudo env EDITOR=nano aurbuild"
