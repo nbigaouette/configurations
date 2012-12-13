@@ -2,6 +2,18 @@
 
 alias now="date +%Y%m%d_%Hh%M"
 
+function less()
+{
+    # Requires GNU Source-highlight (http://www.gnu.org/software/src-highlite/)
+    # Gentoo: dev-util/source-highlight
+    # ArchLinux: extra/source-highlight
+    less_bin=`which less`
+    if [[ "`which src-hilite-lesspipe.sh 2> /dev/null`" == "" ]]; then
+        ${less_bin} ${@}
+    else
+        src-hilite-lesspipe.sh ${@} | ${less_bin}
+    fi
+}
 # Reset slurm nodes to idle
 alias slurm_reset_nodes="sudo scontrol update NodeName=node[2-16] State=idle"
 
