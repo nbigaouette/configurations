@@ -43,12 +43,14 @@ function fgit_branch() {
     hostname=`hostname`
     git_branch=""
     if [[ "${hostname:0:4}" != "node" ]]; then
-        git_branch=$(__git_ps1 " (%s)")
+        git_branch=$(__git_ps1 "%s")
     fi
-    echo "${git_branch}"
+    git_commit=`git rev-parse HEAD`
+    echo " (${git_branch},${git_commit})"
 }
 
 PS1='\[${C2}\](\[${C1}\]\u\[${C3}\]@\[${C5}\]\h${extra}\[${C3}\]:\[${C1}\]\l\[${C2}\])\[${C3}\]-\[${C2}\](\[${C1}\]$(ls -1|wc -l|tr -d "[:blank:]") files\[${C3}\]:\[${C1}\]$(ls -sh|head -n 1|sed "s/.*//")\[${C3}\]@\[${C1}\]\W\[${C2}\])\[${C3}\]-\[${C2}\](\[${C1}\]$(date +%H)\[${C3}\]:\[${C1}\]$(date +%M)\[${C2}\])\n\[${C2}\](\[${C1}\]\w\[${C3}\]$(fgit_branch):\[${C1}\]\$\[${C2}\])\[${C3}\]\n ->\[${C4}\] '
 
 export PS1
+
 
