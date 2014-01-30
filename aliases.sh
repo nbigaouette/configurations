@@ -205,20 +205,6 @@ killp () {
     pss $1 | awk '{print ""$2""}' | xargs kill -9
 }
 
-function sdiff() {
-
-    #svn diff $1 | meld -o -
-    svn diff $1 | kompare -o -
-    #svn diff $1 | beediff -o -
-}
-alias svnd='sdiff &'
-alias sd='sdiff &'
-#alias sd='meld . &'
-alias sc='svn commit'
-alias st='svn status'
-alias sup='svn update'
-alias sl='svn log --stop-on-copy'
-
 function ss() {
     grep -irn "$@" src/*  | sed "s|\(.*\):\([0-9]\+\):\(.*\)|\1  Line \2  \3|g"
 }
