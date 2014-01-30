@@ -45,7 +45,8 @@ function fgit_branch() {
     git_commit=""
     if [[ "${hostname:0:4}" != "node" ]]; then
         git_branch=$(__git_ps1 "%s")
-        if [[ -d .git ]]; then
+        git status &> /dev/null
+        if [[ $? == 0 ]]; then
             git_commit=`git rev-parse HEAD`
         fi
     fi
