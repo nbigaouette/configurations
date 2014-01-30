@@ -2,6 +2,13 @@
 
 alias now="date +%Y%m%d_%Hh%M"
 
+function cdnow()
+{
+    current_date=`now`
+    mkdir -p ${current_date}
+    cd ${current_date}
+}
+
 function less()
 {
     # Requires GNU Source-highlight (http://www.gnu.org/software/src-highlite/)
