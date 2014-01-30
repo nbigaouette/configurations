@@ -244,6 +244,7 @@ function gpull() {
     git fetch
     git rebase ${remote}/${current_branch} ${current_branch}
 }
+alias gitignorefurther='git update-index --assume-unchanged'
 
 # http://www.catonmat.net/blog/git-aliases/
 alias ga='git add'
