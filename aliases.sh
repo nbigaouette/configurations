@@ -2,6 +2,8 @@
 
 alias now="date +%Y%m%d_%Hh%M"
 
+alias uofo="while [[ 0 ]]; do sleep 5 && ssh uofo; done"
+
 function cdnow()
 {
     current_date=`now`
