@@ -5,6 +5,10 @@ alias now="date +%Y%m%d_%Hh%M"
 alias a="atom ."
 alias aa="atom -a ."
 
+function fa() {
+	find . -name ${1} -exec atom {} \;
+}
+
 alias uofo="while [[ 0 ]]; do sleep 5 && ssh uofo; done"
 alias primus="while [[ 0 ]]; do sleep 5 && ssh primus; done"
 
