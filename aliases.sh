@@ -106,6 +106,8 @@ function ssi() {
     grep -rn "$@" src/*  | sed "s|\(.*\):\([0-9]\+\):\(.*\)|\1  Line \2  \3|g"
 }
 
+alias sup="svn update"
+
 alias gl='git log --pretty=format:"%Cgreen%h %Creset %s %Cblueby %an (%ar) %Cred %d" --graph'
 alias gla='git log --all --pretty=format:"%Cgreen%h %Creset %Cred%d%Creset %s %Cblueby %an (%ar)" --graph'
 #alias gd='git diff $* | kompare - &'
