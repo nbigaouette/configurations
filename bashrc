@@ -5,8 +5,6 @@
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 export EDITOR="nano"
-[[ "`pwd`" == "${HOME}" ]] && cd fichiers
-
 
 ## http://dmalloc.com/docs/latest/online/dmalloc_4.html#SEC4
 #function dmalloc { eval `command dmalloc -b $*`; }
