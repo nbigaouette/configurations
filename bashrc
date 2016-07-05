@@ -4,11 +4,7 @@
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
-export PATH=/home/nicolas/fichiers/scripts:/home/nicolas/fichiers/scripts/git-scripts.git:$PATH
 export EDITOR="nano"
-export OOO_FORCE_DESKTOP=gnome
-export GNUTERM=wxt
-
 [[ "`pwd`" == "${HOME}" ]] && cd fichiers
 
 
