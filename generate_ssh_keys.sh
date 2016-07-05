@@ -10,6 +10,5 @@ function generate_ssh_key()
 }
 
 generate_ssh_key rsa
-generate_ssh_key dsa
+# generate_ssh_key dsa
 generate_ssh_key ecdsa
-
