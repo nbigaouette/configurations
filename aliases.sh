@@ -5,6 +5,9 @@ alias now="date +%Y%m%d_%Hh%M"
 alias a="atom ."
 alias aa="atom -a ."
 
+alias n="nvim"
+alias nv="nvim"
+
 function fa() {
 	find . -name ${1} -exec atom {} \;
 }
