@@ -129,7 +129,7 @@ alias glm='gl --first-parent master'
 alias gg='gitg 2> /dev/null &'
 alias gu='git gui &'
 alias gk='gitk --all &'
-alias gps='git push --all'
+alias gps='git push'
 alias gpl='git pull'
 function gpull() {
     current_branch=`git symbolic-ref HEAD | sed "s|refs/heads/||g"`
