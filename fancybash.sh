@@ -104,7 +104,7 @@ function gitinfo() {
     fi
 
     # Extract repo information
-    git_branch=`git symbolic-ref --short HEAD`
+    git_branch=`git symbolic-ref --short HEAD 2> /dev/null`
     git_tag=`git describe --tags --always`
     git_commit=`git rev-parse HEAD`
 
