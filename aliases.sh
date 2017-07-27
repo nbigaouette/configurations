@@ -49,7 +49,7 @@ alias locate='locate -i'
 alias nano='nano -w'
 #alias screen="screen -U -R"
 alias df="df -h --print-type"
-alias du="du -h --max-depth=1"
+alias du="du -h -d 1"
 alias free='free -m'
 alias grpe='grep'
 alias top="htop"
