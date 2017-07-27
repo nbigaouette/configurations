@@ -37,14 +37,7 @@ function less()
     fi
 }
 
-# Gentoo
-alias emerge_update_all="sudo emerge --ask --quiet --verbose --update --deep --newuse --tree --keep-going world"
 alias resource="source /etc/profile && source ~/.bashrc"
-
-# Call "tail -f" on a file and put timestamp at the begining of each lines.
-function tailtime() {
-    tail -f ${1} | awk '{now=strftime("%F %T%z\t");sub(/^/, now);print}'
-}
 
 alias locate='locate -i'
 #alias grep='grep -n'
@@ -59,9 +52,6 @@ alias untar="tar -xvf"
 #alias untar="tar -zxvf"
 #alias untarj="tar -jxvf"
 alias pingg="ping -c 3 www.google.com"
-alias octave='octave --quiet'
-alias ipython='ipython --pylab'
-alias ipython2='ipython2 --pylab'
 function pss() {
 	ps auxf | grep -i "$@" | grep -v grep | grep --color=auto -i "$@"
 }
@@ -107,37 +97,16 @@ function aur() {
     fi
 }
 
-killp () {
-    pss $1 | awk '{print ""$2""}' | xargs kill -9
-}
-
-function ss() {
-    grep -irn "$@" src/*  | sed "s|\(.*\):\([0-9]\+\):\(.*\)|\1  Line \2  \3|g"
-}
-function ssi() {
-    grep -rn "$@" src/*  | sed "s|\(.*\):\([0-9]\+\):\(.*\)|\1  Line \2  \3|g"
-}
-
-alias sup="svn update"
-
 alias gl='git log --pretty=format:"%Cgreen%h %Creset %s %Cblueby %an (%ar) %Cred %d" --graph'
 alias gla='git log --all --pretty=format:"%Cgreen%h %Creset %Cred%d%Creset %s %Cblueby %an (%ar)" --graph'
 alias glm='gl --first-parent master'
 
 
-#alias gd='git diff $* | kompare - &'
 alias gg='gitg 2> /dev/null &'
 alias gu='git gui &'
 alias gk='gitk --all &'
 alias gps='git push'
 alias gpl='git pull'
-function gpull() {
-    current_branch=`git symbolic-ref HEAD | sed "s|refs/heads/||g"`
-    remote=${1-origin}
-    git fetch
-    git rebase ${remote}/${current_branch} ${current_branch}
-}
-alias gitignorefurther='git update-index --assume-unchanged'
 
 # http://www.catonmat.net/blog/git-aliases/
 alias ga='git add'
@@ -160,8 +129,3 @@ function check_memory() {
 }
 alias cm=check_memory
 
-
-alias qmlscene55lgpl="~/Qt/LGPL/5.5/gcc_64/bin/qmlscene"
-alias qmlscene56lgpl="~/Qt/LGPL/5.6/gcc_64/bin/qmlscene"
-alias qmlscene551debug="~/opt/Qt/5.5.1/debug/bin/qmlscene"
-alias qmlscene551release="~/opt/Qt/5.5.1/release/bin/qmlscene"
