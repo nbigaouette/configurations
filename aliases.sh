@@ -122,6 +122,9 @@ alias sup="svn update"
 
 alias gl='git log --pretty=format:"%Cgreen%h %Creset %s %Cblueby %an (%ar) %Cred %d" --graph'
 alias gla='git log --all --pretty=format:"%Cgreen%h %Creset %Cred%d%Creset %s %Cblueby %an (%ar)" --graph'
+alias glm='gl --first-parent master'
+
+
 #alias gd='git diff $* | kompare - &'
 alias gg='gitg 2> /dev/null &'
 alias gu='git gui &'
