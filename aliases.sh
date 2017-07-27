@@ -8,6 +8,8 @@ alias aa="atom -a ."
 alias n="nvim"
 alias nv="nvim"
 
+alias tma="tmux a"
+
 function fa() {
 	find . -name ${1} -exec atom {} \;
 }
