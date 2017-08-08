@@ -129,5 +129,3 @@ function gitinfo() {
 PS1='\[${Cdelim}\](\[${txtrst}\]${Cuser}\u${txtrst}${bldylw}@${txtrst}${Chost}\h${txtrst}\[${Cdelim}\])-(\[${txtrst}\]\[${Cpath}\]$(ls -1|wc -l|tr -d "[:blank:]") files\[${txtrst}\]\[${Cdelim}\])-(\[${txtrst}\]${Ctime}$(date +%H:%M)${txtrst}\[${Cdelim}\])$(gitinfo)\n\[${Cdelim}\](\[${txtrst}\]${Cpath}\w${txtrst}\[${Cdelim}\])\n\[${Cdelim}\] ->\[${txtrst}\] '
 
 export PS1
-
-
