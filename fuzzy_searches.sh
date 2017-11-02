@@ -15,3 +15,12 @@ tm() {
 }
 
 
+# https://junegunn.kr/2015/03/fzf-tmux/
+# git checkout <branch>
+fbr() {
+  local branches branch
+  branches=$(git branch) &&
+  branch=$(echo "$branches" | fzf-tmux -d 15 +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //")
+}
+
