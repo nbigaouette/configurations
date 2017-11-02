@@ -3,7 +3,7 @@
 # enable bash completion in interactive shells
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
-export EDITOR="nano"
+export EDITOR="vim"
 
 
 export BASH_CONFIG_FOLDER="${HOME}/fichiers/scripts/configurations.git"
