@@ -26,3 +26,6 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //")
 }
 
+# git merge --no-ff <branch>
+alias gmb='git merge --no-ff $(git branch | fzf --height 40%)'
+
