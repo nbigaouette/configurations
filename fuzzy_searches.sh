@@ -16,7 +16,7 @@ tm() {
   session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
 
-
+# -----------------------------------------------------------------------------
 # https://junegunn.kr/2015/03/fzf-tmux/
 # git checkout <branch>
 fbr() {
