@@ -2,12 +2,9 @@
 
 # enable bash completion in interactive shells
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
-[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 export EDITOR="nano"
 
-## http://dmalloc.com/docs/latest/online/dmalloc_4.html#SEC4
-#function dmalloc { eval `command dmalloc -b $*`; }
 
 export BASH_CONFIG_FOLDER="${HOME}/fichiers/scripts/configurations.git"
 
