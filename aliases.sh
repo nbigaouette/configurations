@@ -107,6 +107,7 @@ alias gu='git gui &'
 alias gk='gitk --all &'
 alias gps='git push'
 alias gpl='git pull'
+alias gpp='git pull --prune'
 
 # http://www.catonmat.net/blog/git-aliases/
 alias ga='git add'
