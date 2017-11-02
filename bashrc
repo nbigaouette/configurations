@@ -5,8 +5,7 @@
 
 export EDITOR="vim"
 
-
-export BASH_CONFIG_FOLDER="${HOME}/fichiers/scripts/configurations.git"
+export BASH_CONFIG_FOLDER="${HOME}/.configurations.git"
 
 [[ -f ${BASH_CONFIG_FOLDER}/tmux_launch.sh ]]       && source ${BASH_CONFIG_FOLDER}/tmux_launch.sh
 # [[ -f ${BASH_CONFIG_FOLDER}/cgroups_cpu_scheduling.sh ]] && source ${BASH_CONFIG_FOLDER}/cgroups_cpu_scheduling.sh
