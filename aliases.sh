@@ -7,6 +7,7 @@ alias aa="atom -a ."
 
 alias n="nvim"
 alias nv="nvim"
+alias v="nvim"
 
 alias tma="tmux a"
 
