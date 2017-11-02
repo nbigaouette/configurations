@@ -8,6 +8,7 @@ export EDITOR="vim"
 export BASH_CONFIG_FOLDER="${HOME}/.configurations.git"
 
 [[ -f ${BASH_CONFIG_FOLDER}/fuzzy_searches.sh ]]    && source ${BASH_CONFIG_FOLDER}/fuzzy_searches.sh
+[[ -f ${BASH_CONFIG_FOLDER}/ssh-agent.sh ]]         && source ${BASH_CONFIG_FOLDER}/ssh-agent.sh
 [[ -f ${BASH_CONFIG_FOLDER}/tmux_launch.sh ]]       && source ${BASH_CONFIG_FOLDER}/tmux_launch.sh
 # [[ -f ${BASH_CONFIG_FOLDER}/cgroups_cpu_scheduling.sh ]] && source ${BASH_CONFIG_FOLDER}/cgroups_cpu_scheduling.sh
 [[ -f ${BASH_CONFIG_FOLDER}/fancybash.sh ]]         && source ${BASH_CONFIG_FOLDER}/fancybash.sh
