@@ -1,6 +1,8 @@
-
 # https://github.com/junegunn/fzf/
 
+alias nf='nvim $(fzf --height 40%)'
+
+# -----------------------------------------------------------------------------
 # https://github.com/junegunn/fzf/wiki/examples#tmux
 # tm - create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)
 # `tm` will allow you to select your tmux session via fzf.
